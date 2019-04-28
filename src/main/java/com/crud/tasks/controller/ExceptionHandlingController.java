@@ -7,15 +7,14 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
-import java.util.NoSuchElementException;
 
 @RestController
 @ControllerAdvice
 @Order(Ordered.HIGHEST_PRECEDENCE)
 public class ExceptionHandlingController extends ResponseEntityExceptionHandler {
 
-    @ExceptionHandler(NoSuchElementException.class)
-    public final void handleNoSuchElementException() {
+    @ExceptionHandler(NullPointerException.class)
+    public final void handleNullPointerException() {
         System.out.println("There is no task with such ID");
 
     }
