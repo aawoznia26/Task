@@ -14,6 +14,12 @@ public class Mail {
         this.toCc = toCc;
     }
 
+    public Mail(String receiverEmail, String subject, String message) {
+        this.receiverEmail = receiverEmail;
+        this.subject = subject;
+        this.message = message;
+    }
+
     public String getReceiverEmail() {
         return receiverEmail;
     }
