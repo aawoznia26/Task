@@ -26,8 +26,8 @@ public class SimpleEmailServiceTest {
     public void shouldSentMail() {
 
         //Given
-        String toCC = null;
-        Mail mail = new Mail("test@test.com", "Test", "Test message", toCC);
+
+        Mail mail = new Mail("test@test.com", "Test", "Test message", "test@test.pl");
 
         SimpleMailMessage simpleMailMessage = new SimpleMailMessage();
         simpleMailMessage.setTo(mail.getReceiverEmail());
