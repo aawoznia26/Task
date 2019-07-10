@@ -1,7 +1,6 @@
-package com.crud.tasks.trello.facade;
+package com.crud.tasks.mapper;
 
 import com.crud.tasks.domain.*;
-import com.crud.tasks.mapper.TrelloMapper;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -12,8 +11,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import static org.hamcrest.Matchers.instanceOf;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -133,5 +130,7 @@ public class MappersTestSuite {
 
         //Then
         Assert.assertSame(mappedCard.getClass(), TrelloCard.class );
+        Assert.assertNotEquals(null,mappedCard.getListId() );
+
     }
 }
