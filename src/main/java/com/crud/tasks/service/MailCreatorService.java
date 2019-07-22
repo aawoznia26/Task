@@ -1,7 +1,6 @@
 package com.crud.tasks.service;
 
 
-import com.crud.tasks.domain.Task;
 import com.crud.tasks.repository.TaskRepository;
 import com.crud.tasks.trello.config.AdminConfig;
 import org.springframework.beans.factory.annotation.Autowired;

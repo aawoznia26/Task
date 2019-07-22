@@ -61,7 +61,7 @@ public class TaskControllerTest {
         String jsonContent = gson.toJson(tasksDtoList);
 
         //When & Then
-        mockMvc.perform(get("/v1/task/getTasks").contentType(MediaType.APPLICATION_JSON)
+        mockMvc.perform(get("/v1/tasks").contentType(MediaType.APPLICATION_JSON)
                 .characterEncoding("UTF-8")
                 .content(jsonContent))
                 .andExpect(status().is(200))
@@ -82,8 +82,7 @@ public class TaskControllerTest {
         String jsonContent = gson.toJson(taskDto1);
 
         //When & Then
-        mockMvc.perform(get("/v1/task/getTask").contentType(MediaType.APPLICATION_JSON)
-                .param("taskId", "1")
+        mockMvc.perform(get("/v1/tasks/1").contentType(MediaType.APPLICATION_JSON)
                 .characterEncoding("UTF-8")
                 .content(jsonContent))
                 .andExpect(status().is(200))
@@ -105,8 +104,7 @@ public class TaskControllerTest {
 
         //When & Then
 
-        mockMvc.perform(delete("/v1/task/deleteTask").contentType(MediaType.APPLICATION_JSON)
-                .param("taskId", id.toString()))
+        mockMvc.perform(delete("/v1/tasks/" + id.toString()).contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().is(200));
     }
 
@@ -126,7 +124,7 @@ public class TaskControllerTest {
         String jsonContent = gson.toJson(taskDto1);
 
         //When & Then
-        mockMvc.perform(put("/v1/task/updateTask").contentType(MediaType.APPLICATION_JSON)
+        mockMvc.perform(put("/v1/tasks").contentType(MediaType.APPLICATION_JSON)
                 .characterEncoding("UTF-8")
                 .content(jsonContent))
                 .andExpect(status().is(200))
@@ -152,7 +150,7 @@ public class TaskControllerTest {
         String jsonContent = gson.toJson(taskDto1);
 
         //When & Then
-        mockMvc.perform(post("/v1/task/createTask").contentType(MediaType.APPLICATION_JSON)
+        mockMvc.perform(post("/v1/tasks").contentType(MediaType.APPLICATION_JSON)
                 .characterEncoding("UTF-8")
                 .content(jsonContent))
                 .andExpect(status().is(200))
